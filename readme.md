@@ -1,10 +1,15 @@
 # my-invoices
 
-I made this quick and dirty Typst template for simple, easily reproducible invoices for IT sidework and contracts.
+I made this quick and dirty Typst template for simple, easily reproducible invoices for IT side work and contracts.
 
-This does not adhere to any financial or tax legal standard, and is meant for record keeping and notices.
+### How to use:
+Clone the repository. Document formatting, data structure, and calculations can be adjusted as needed in `template.typ`
 
-This is a a work in progress.
+Individual invoice details are adjusted as needed in `main.typ.`
+
+`typst compile main.typ` once complete.
+
+**Disclaimer:** This does not adhere to any financial or tax legal standard, and is meant for record keeping and notices.
 
 ![Example](./example.png)
 ```
