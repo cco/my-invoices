@@ -1,3 +1,5 @@
+// This was just an LLM workaround to issues between math and text mode formatting I kept running into.
+// If someone has a better idea, let me know.
 #let money(n) = {
   let rounded = calc.round(n * 100) / 100
   let s = str(rounded)
@@ -24,10 +26,14 @@
   doc,
 ) = {
   
-  // Document formatting.
+  // Document formatting and logo.
   set page(
     paper: "us-letter",
-    header: align(right + horizon, title),
+    header: grid(
+    columns: (1fr, 1fr),
+    align(left + horizon, image("../logo.png", width: 50%)), 
+    align(right + horizon)[#title]
+  ),
     margin: (top: 1.25in, rest: .25in)
   )
   set par(justify: true)
@@ -42,7 +48,7 @@
     {
       let count = invoice.len()
       let ncols = calc.min(count, 3)
-
+  
       block(text(weight: "bold", date))
       v(1em)
 
@@ -60,7 +66,7 @@
           #link("mailto:" + inv.email)
         ]),
       )
-    
+
       v(1em)
       par(justify: false)[
         *Description* \
